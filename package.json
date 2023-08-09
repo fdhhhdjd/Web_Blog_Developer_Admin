@@ -1,0 +1,54 @@
+{
+  "name": "Web Blog Developer",
+  "description": "Welcome to the Web Blog Developer Vue.js Test! In this test, you will be tasked with creating a simple app for an online cake shop using Vue.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "host": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "prepare": "husky install",
+    "pre-commit": "echo \"[Husky] pre-commit\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "add": "^2.0.6",
+    "canvas-confetti": "^1.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.2",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "vue-toastification": "^2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-sonarjs": "^0.19.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "husky": "^8.0.0",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}
