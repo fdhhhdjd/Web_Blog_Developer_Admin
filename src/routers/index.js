@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 //* CONFIGS
-import { PRODUCTS } from '../configs';
+import { PRODUCTS } from '@/commons';
 
 // Todo: Create router
 export default createRouter({

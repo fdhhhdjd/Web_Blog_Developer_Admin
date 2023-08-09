@@ -6,9 +6,7 @@ export const NODE = {
 
 // Todo: NAME REDUX
 export const REDUX_NAME = {
-  CART: 'cart_slice',
-  PRODUCT: 'product_slice',
-  ORDER: 'order_slice',
+  AUTH: 'auth_slice',
 };
 
 // Todo: TIME

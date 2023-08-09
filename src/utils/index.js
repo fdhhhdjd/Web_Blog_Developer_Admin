@@ -1,8 +1,11 @@
 //* API
-import ProductArr from '../api/json/products.json';
+import ProductArr from '@/static/json/product.json';
+
+//* CONSTANTS
+import { ROUND } from '@/commons/constants';
 
 //* CONFIGS
-import { REGEX_IS_STRING_PARAM, ROUND } from '../configs';
+import { REGEX_IS_STRING_PARAM } from '../commons';
 import { saveToLocalStorage } from './localstorage';
 
 // Round a number to 3 decimal places
