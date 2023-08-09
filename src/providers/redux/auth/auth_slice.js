@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { loginAccountInitialState } from './auth_thunk';
 
 //* CONFIGS
-import { REDUX_NAME } from '../../../configs';
+import { REDUX_NAME } from '@/commons/constants';
 
 const initialState = {
   loading: false,
@@ -14,7 +14,7 @@ const initialState = {
 };
 
 const Auth = createSlice({
-  name: REDUX_NAME.CART,
+  name: REDUX_NAME.AUTH,
   initialState,
   reducers: {
     // Clear all auth

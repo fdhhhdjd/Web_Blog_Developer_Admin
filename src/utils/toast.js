@@ -1,8 +1,8 @@
 //* LIBRARY
 import { useToast } from 'vue-toastification';
 
-//* CONFIGS
-import { TIME, TOAST } from '../configs';
+//* CONSTANTS
+import { TIME, TOAST } from '@/commons/constants';
 
 let isToastValue;
 

@@ -2,8 +2,8 @@
 import { inject, computed } from 'vue';
 
 //* PROVIDERS
-import store from '../providers/store';
-import { storeKey } from '../providers/storePlugin';
+import store from '@/providers/store';
+import { storeKey } from '@/providers/storePlugin';
 
 // A custom hook that provides access to the Redux store's 'dispatch' function.
 // It allows components to dispatch actions to update the Redux store.
