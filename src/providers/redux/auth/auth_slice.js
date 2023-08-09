@@ -1,11 +1,11 @@
 //* LIBRARY
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 //* REDUX THUNK
-import { loginAccountInitialState } from "./auth_thunk";
+import { loginAccountInitialState } from './auth_thunk';
 
 //* CONFIGS
-import { REDUX_NAME } from "../../../configs";
+import { REDUX_NAME } from '../../../configs';
 
 const initialState = {
   loading: false,

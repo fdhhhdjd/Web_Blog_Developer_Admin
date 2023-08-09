@@ -1,9 +1,9 @@
 //* LIBRARY
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Add To Cart Muting Quantity
 export const loginAccountInitialState = createAsyncThunk(
-  "auth/login",
+  'auth/login',
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       return {
