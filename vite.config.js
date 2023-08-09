@@ -48,7 +48,7 @@ export default defineConfig({
     // Backend
     proxy: {
       // Proxy requests starting with /api/v1 to a different server
-      '/api/v1': 'http://localhost:5000/api/admin/v1',
+      '/api/admin/v1': 'http://localhost:5000',
 
       // Proxy requests starting with /api/v2 to a different server
       '/api/v2': 'http://localhost:5000/api/admin/v2',

@@ -9,12 +9,9 @@ import LayoutAuthenticated from './LayoutAuthenticated/index.vue';
 const layout = ref();
 const route = useRoute();
 
-console.log(LayoutAuthenticated);
 watch(
   () => route.meta?.layout,
   async (metaLayout) => {
-    console.log(metaLayout);
-
     try {
       const component =
         metaLayout && (await import(/* @vite-ignore */ `./${metaLayout}/index.vue`));

@@ -41,7 +41,7 @@ export const CHARACTER = {
   _25: 25,
 };
 
-// TYPE TOAST
+// Todo: TYPE TOAST
 export const TOAST = {
   BOTTOM_CENTER: 'bottom-center',
   TOP_RIGHT: 'top-right',
@@ -50,3 +50,15 @@ export const TOAST = {
     LIGHT: 'light',
   },
 };
+
+// Todo: Header
+export const HEADER = {
+  OS_TYPE_HEADER: 'web',
+  OS_VERSION_HEADER: '1.0',
+  APP_VERSION_HEADER: '1.0',
+  ACCEPT_HEADER: 'application/json',
+  BEARER_HEADER: 'Bearer',
+};
+
+// Todo: API
+export const renewToken = '/api/v1/auth/renew-token';

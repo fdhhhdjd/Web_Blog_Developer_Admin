@@ -3,6 +3,8 @@ const development = {
   app: {
     // Todo: NODE DEVELOPER
     node_dev: process.env.NODE_ENV,
+    timeout_axios: 1000,
+    random_nano_id: 50,
   },
 };
 
@@ -11,6 +13,8 @@ const production = {
   app: {
     // Todo: NODE PRODUCTION
     node_dev: process.env.NODE_ENV,
+    timeout_axios: 1000,
+    random_nano_id: 50,
   },
 };
 

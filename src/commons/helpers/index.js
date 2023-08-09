@@ -5,6 +5,13 @@ import { inject, computed } from 'vue';
 import store from '@/providers/store';
 import { storeKey } from '@/providers/storePlugin';
 
+//* UTILS
+import { getFromLocalStorage } from '../utils/localstorage';
+import { getDeviceId } from '../utils/function';
+
+//* KEYS
+import { ACCESS_TOKEN } from '../keys/localsorage';
+
 // A custom hook that provides access to the Redux store's 'dispatch' function.
 // It allows components to dispatch actions to update the Redux store.
 export const useDispatch = () => store.dispatch;
@@ -20,4 +27,20 @@ export const useSelector = (fn) => {
   // The computed property is based on the 'fn' selector function and re-computes whenever the Redux store state changes.
   // It returns the selected data from the Redux store state, making it reactive and automatically updating in components when the underlying state changes.
   return computed(() => fn(rootStore.state));
+};
+
+// Take header for header browser
+export const headerBrowser = () => {
+  // add the authorization to the headers
+  const headers = {
+    'X-DEVICE-ID': getDeviceId(),
+  };
+
+  const token = getFromLocalStorage(ACCESS_TOKEN);
+
+  if (token) {
+    headers.authorization = token ? `Bearer ${token}` : null;
+  }
+
+  return headers;
 };
