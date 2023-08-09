@@ -1,9 +1,9 @@
 <script setup>
 //* LAYOUT
-import LayoutDefat from '@/layouts/Default/index.vue';
+import LayoutAdmin from '@/layouts/index.vue'
 </script>
 
 <template>
   <!-- Layout main -->
-  <LayoutDefat />
+  <LayoutAdmin />
 </template>
