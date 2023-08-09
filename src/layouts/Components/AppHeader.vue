@@ -135,8 +135,8 @@ const notificationOpen = ref(false);
       </div>
       <div class="relative">
         <button
-          @click="dropdownOpen = !dropdownOpen"
           class="relative z-10 block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none"
+          @click="dropdownOpen = !dropdownOpen"
         >
           <img
             class="object-cover w-full h-full"
@@ -226,7 +226,8 @@ const notificationOpen = ref(false);
                   d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                 />
               </svg>
-              Log out</RouterLink
+              Log out
+</RouterLink
             >
           </div>
         </Transition>

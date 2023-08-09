@@ -8,6 +8,7 @@ import LayoutAuthenticated from './LayoutAuthenticated/index.vue';
 
 const layout = ref();
 const route = useRoute();
+
 console.log(LayoutAuthenticated);
 watch(
   () => route.meta?.layout,
