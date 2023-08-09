@@ -91,6 +91,9 @@ export default defineConfig({
     },
     // Enable source maps for better debugging
     sourcemap: true,
+    // Other build options
+    minify: 'terser',
+
     // Code Splitting
     rollupOptions: {
       output: {
