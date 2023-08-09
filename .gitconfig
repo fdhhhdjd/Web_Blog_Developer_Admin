@@ -2,7 +2,7 @@
 	email = nguyentientai10@gmail.com
 	name = fdhhhdjd
 
-.node_modules
+node_modules
 .env
-.dist
-.package-lock.json
+dist
+package-lock.json
