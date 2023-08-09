@@ -1,9 +1,9 @@
 <script setup>
 //* LIBRARY
-import LayoutDefat from './layouts/Default/index.vue';
+import LayoutDefaut from './layouts/index.vue';
 </script>
 
 <template>
   <!-- Layout main -->
-  <LayoutDefat />
+  <LayoutDefaut />
 </template>

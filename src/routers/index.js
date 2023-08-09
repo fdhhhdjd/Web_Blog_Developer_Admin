@@ -12,7 +12,7 @@ export default createRouter({
       path: '/',
       component: import('../pages/auth/index.vue'),
       meta: {
-        layout: 'default',
+        layout: 'LayoutAuthenticated',
         title: PRODUCTS.LIST,
       },
     },

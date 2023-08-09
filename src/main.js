@@ -19,6 +19,7 @@ import { DATA_TYPE, DEFAULT } from './configs';
 import { createRedux } from './providers/storePlugin';
 import store from './providers/store';
 
+//
 const options = {
   position: POSITION.TOP_RIGHT,
 };
