@@ -93,6 +93,7 @@ module.exports = {
       2,
       {
         ignore: [
+          '^@',
           '~pages$',
           'virtual:generated-layouts',
 
@@ -146,6 +147,11 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.mjs'],
+      },
+      alias: {
+        map: [
+          ['@', './src'], // Map @n to your source directory
+        ],
       },
     },
   },

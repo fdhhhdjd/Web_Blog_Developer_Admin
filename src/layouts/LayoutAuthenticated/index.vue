@@ -4,6 +4,7 @@ console.log('hello world');
 
 <template>
   <div>
+    <div>Hello Word</div>
     <slot />
   </div>
 </template>
