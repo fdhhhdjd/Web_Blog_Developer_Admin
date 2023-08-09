@@ -1,9 +1,9 @@
 // Todo: DEFAULT
-export const DEFAULT = 'CL Cake Shop';
+export const DEFAULT = 'Blog Developer';
 
 // Todo: PRODUCTS
 export const PRODUCTS = {
-  LIST: 'List Product',
+  LIST: 'DashBoard',
   DETAIL: 'Product Detail',
 };
 

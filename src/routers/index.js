@@ -10,7 +10,7 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      component: import('../pages/auth/index.vue'),
+      component: import('@/pages/auth/index.vue'),
       meta: {
         layout: 'default',
         title: PRODUCTS.LIST,
@@ -18,13 +18,13 @@ export default createRouter({
     },
     {
       path: '/thankyou',
-      component: import('../pages/thankyou/index.vue'),
+      component: import('@/pages/thankyou/index.vue'),
     },
     // will match everything and put it under `$route.params.pathMatch`
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: import('../pages/notfound/index.vue'),
+      component: import('@/pages/notfound/index.vue'),
     },
   ],
 });

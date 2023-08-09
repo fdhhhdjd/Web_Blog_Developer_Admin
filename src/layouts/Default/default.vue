@@ -1,6 +1,6 @@
 <script setup>
 //* HEADER
-import Header from '../Header/Header.vue';
+import Header from '@/layouts/Header/Header.vue';
 </script>
 
 <template>

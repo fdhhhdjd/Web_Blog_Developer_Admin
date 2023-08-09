@@ -30,8 +30,12 @@ export default defineConfig({
   base: '/',
 
   resolve: {
-    alias: {
-      '@images': fileURLToPath(new URL('./src/assets/', import.meta.url)),
-    },
+    alias: [
+      {
+        find: '@images',
+        replacement: fileURLToPath(new URL('./src/assets/', import.meta.url)),
+      },
+      { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+    ],
   },
 });

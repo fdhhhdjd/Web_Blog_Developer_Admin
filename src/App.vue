@@ -1,6 +1,6 @@
 <script setup>
-//* LIBRARY
-import LayoutDefat from './layouts/Default/index.vue';
+//* LAYOUT
+import LayoutDefat from '@/layouts/Default/index.vue';
 </script>
 
 <template>
