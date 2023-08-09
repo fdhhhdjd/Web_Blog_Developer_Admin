@@ -50,7 +50,9 @@ const menuClick = (event, item) => {
 
       <nav class="mt-10">
         <div v-for="(menu, index) in menuAside" :key="index" class="">
-          <p class="pl-4 text-xs font-semibold mb-4 text-gray-400">{{ menu.group }}</p>
+          <p class="pl-4 text-xs font-semibold mb-4 text-gray-400">
+{{ menu.group }}
+</p>
 
           <MenutemLink
             v-for="item in menu.children"
