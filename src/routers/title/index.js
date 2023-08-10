@@ -1,5 +1,5 @@
 //* COMMONS
-import { DATA_TYPE } from '@/commons';
+import { DATA_TYPE, DEFAULT } from '@/commons';
 
 //* ROUTER
 import routers from '..';

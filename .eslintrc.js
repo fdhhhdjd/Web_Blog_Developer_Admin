@@ -21,7 +21,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/require-default-prop': 'off',
     // indentation (Already present in TypeScript)
-    indent: ['error', 2],
+    // indent: ['error', 2],
 
     // Enforce trailing comma (Already present in TypeScript)
     'comma-dangle': ['error', 'always-multiline'],

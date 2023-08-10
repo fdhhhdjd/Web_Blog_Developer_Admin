@@ -22,5 +22,10 @@ import { options } from './plugins';
 // TITLE ROUTER
 import '@/routers/title';
 
+const app = createApp(App);
+
 //* START ALL
-createApp(App).use(router).use(createRedux(store)).use(Toast, options).mount('#app');
+app.use(router);
+app.use(createRedux(store));
+app.use(Toast, options);
+app.mount('#app');
