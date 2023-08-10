@@ -2,18 +2,10 @@
 import axios from 'axios';
 
 //* COMMONS
-import { getRenewToken } from '@/api/auth';
-import {
-  ACCESS_TOKEN,
-  Configs,
-  HEADER,
-  StatusCodes,
-  URL,
-  getFromLocalStorage,
-  headerBrowser,
-} from '@/commons';
+import { ACCESS_TOKEN, Configs, HEADER, URL, getFromLocalStorage, headerBrowser } from '@/commons';
 
 //* ROUTERS
+import { handleRefreshing } from '../main';
 
 // Configs Destructuring object
 const {
@@ -44,40 +36,5 @@ axiosInsV1.interceptors.request.use(
   }
 );
 
-let isRefreshing = false;
-
-axiosInsV1.interceptors.response.use(
-  (response) => response,
-  async (err) => {
-    const originalConfig = err?.config;
-    if (
-      originalConfig &&
-      originalConfig?.url !== URL._LOGIN &&
-      err.response &&
-      err.response?.status === StatusCodes.UNAUTHORIZED &&
-      !originalConfig._retry &&
-      !isRefreshing
-    ) {
-      originalConfig._retry = true;
-      originalConfig.headers = { ...originalConfig.headers };
-
-      try {
-        // Start Renew Token
-        await getRenewToken();
-
-        isRefreshing = false;
-
-        return axiosInsV1(originalConfig);
-      } catch (_error) {
-        console.log(_error);
-
-        // Clear Key Localsorage
-        routers.push({ path: '/login' });
-
-        return Promise.reject(_error);
-      }
-    }
-
-    return Promise.reject(err);
-  }
-);
+// Is refetching Token
+handleRefreshing(axiosInsV1);

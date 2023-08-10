@@ -72,6 +72,6 @@ export const HEADER = {
 
 // Todo: API
 export const URL = {
-  _RENEW_TOKEN: '/api/v1/auth/renew-token',
-  _LOGIN: '/api/v1/auth/login',
+  _RENEW_TOKEN: '/auth/renew-token',
+  _LOGIN: '/auth/login',
 };
