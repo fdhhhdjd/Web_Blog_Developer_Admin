@@ -10,10 +10,9 @@ import SectionFullScreen from '@/components/SectionFullScreen.vue';
 import FormField from '@/components/Form/FormField.vue';
 import FormControl from '@/components/Form/FormControl.vue';
 import BaseButton from '@/components/Button/BaseButton.vue';
-import { validateInputLoginEmailOrUsername } from '@/commons';
 
 //* COMMON
-import { useDispatch } from '@/commons';
+import { useDispatch, validateInputLoginEmailOrUsername } from '@/commons';
 import { loginAccountInitial } from '@/providers/redux';
 
 const form = reactive({

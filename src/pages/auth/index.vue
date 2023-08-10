@@ -92,13 +92,31 @@ const handleUpdateProfile = async () => {
 
 <template>
   <h1>Authentication</h1>
-  <button @click="handleLogin">Login</button>
-  <button @click="handleLogout">Logout</button>
-  <button @click="handleGetProfile">Profile</button>
-  <button @click="handleUpdateProfile">Update Profile</button>
-  <button @click="handleRegister">Register</button>
-  <button @click="handleForget">Forget</button>
-  <button @click="handleRenew">New Token</button>
-  <button @click="verificationOTP">Verification OTP</button>
-  <button @click="handleChangePassword">Change Password</button>
+  <button @click="handleLogin">
+Login
+</button>
+  <button @click="handleLogout">
+Logout
+</button>
+  <button @click="handleGetProfile">
+Profile
+</button>
+  <button @click="handleUpdateProfile">
+Update Profile
+</button>
+  <button @click="handleRegister">
+Register
+</button>
+  <button @click="handleForget">
+Forget
+</button>
+  <button @click="handleRenew">
+New Token
+</button>
+  <button @click="verificationOTP">
+Verification OTP
+</button>
+  <button @click="handleChangePassword">
+Change Password
+</button>
 </template>
