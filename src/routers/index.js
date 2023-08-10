@@ -4,8 +4,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 //* CONFIGS
 import { PRODUCTS } from '@/commons';
 
+//* PLUGIN
+import NProgress from '@/plugins/nprogress';
+
 // Todo: Create router
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
@@ -46,3 +49,14 @@ export default createRouter({
     },
   ],
 });
+
+router.beforeEach((to, _from, next) => {
+  NProgress.start();
+  next();
+});
+
+router.afterEach(() => {
+  NProgress.done();
+});
+
+export default router;

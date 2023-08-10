@@ -10,6 +10,8 @@ import {
   verificationOTPAccountInitial,
   getProfileAccountInitial,
   registerAccountInitial,
+  changePasswordAccountInitial,
+  updateProfileAccountInitial,
 } from './auth_thunk';
 
 //* COMMONS
@@ -20,16 +22,18 @@ import {
   removeFromLocalStorage,
   saveToLocalStorage,
 } from '@/commons';
+import router from '@/routers';
 
 const initialState = {
   loading: false,
   error: null,
   auth: null,
   info_profile: null,
-  flag_forget: false,
+  flag: false,
   flag_logout: false,
   flag_veri_otp: false,
   flag_register: false,
+  flag_change_pw: false,
 };
 
 const Auth = createSlice({
@@ -38,12 +42,32 @@ const Auth = createSlice({
   reducers: {
     // Clear all auth
     clearAuth: (state) => {
-      state.auth = [];
+      clearInfoProfile();
+
+      // Redirect login
+      router.push('/login');
+
+      // Clear accessToken
+      removeFromLocalStorage(ACCESS_TOKEN);
+
+      // Clear Permission Key
+      removeFromLocalStorage(PERMISSION_KEY);
+
+      state.auth = null;
+
+      state.info_profile = null;
+
+      state.flag = false;
+    },
+
+    // Clear info
+    clearInfoProfile: (state) => {
+      state.info_profile = null;
     },
 
     // Clear flag action success
     clearFlag: (state) => {
-      state.flag_forget = false;
+      state.flag = false;
     },
   },
   extraReducers: {
@@ -72,16 +96,16 @@ const Auth = createSlice({
     //* Register Account
     [registerAccountInitial.pending]: (state, action) => {
       state.loading = true; // When the 'registerAccountInitial' async action starts (is pending), set the loading state to true.
-      state.flag_register = false; // When the 'registerAccountInitial' async action starts (is pending), set the loading state to true.
+      state.flag = false; // When the 'registerAccountInitial' async action starts (is pending), set the loading state to true.
     },
     [registerAccountInitial.fulfilled]: (state, action) => {
       state.loading = false; // When the 'registerAccountInitial' async action is fulfilled (successfully completed), set the loading state to false.
-      state.flag_register = true;
+      state.flag = true;
     },
     [registerAccountInitial.rejected]: (state, action) => {
       state.loading = false; // When the 'registerAccountInitial' async action is rejected (encountered an error), set the loading state to false.
       state.error = action.payload; // Set the error state to the payload of the rejected action.
-      state.flag_register = false;
+      state.flag = false;
     },
 
     //* Renew Token Account
@@ -105,48 +129,39 @@ const Auth = createSlice({
     //* Forget Account
     [forgetPasswordAccountInitial.pending]: (state, action) => {
       state.loading = true; // When the 'forgetPasswordAccountInitial' async action starts (is pending), set the loading state to true.
-      state.flag_forget = false; // When the 'forgetPasswordAccountInitial' async action is rejected (encountered an error), set the loading state to false.
+      state.flag = false; // When the 'forgetPasswordAccountInitial' async action is rejected (encountered an error), set the loading state to false.
     },
     [forgetPasswordAccountInitial.fulfilled]: (state, action) => {
       state.loading = false; // When the 'forgetPasswordAccountInitial' async action is fulfilled (successfully completed), set the loading state to false.
-      state.flag_forget = true;
+      state.flag = true;
     },
     [forgetPasswordAccountInitial.rejected]: (state, action) => {
       state.loading = false;
-      state.flag_forget = false; // When the 'forgetPasswordAccountInitial' async action is rejected (encountered an error), set the loading state to false.
+      state.flag = false; // When the 'forgetPasswordAccountInitial' async action is rejected (encountered an error), set the loading state to false.
       state.error = action.payload; // Set the error state to the payload of the rejected action.
     },
 
     //* Logout Account
     [logoutAccountInitial.pending]: (state, action) => {
       state.loading = true; // When the 'logoutAccountInitial' async action starts (is pending), set the loading state to true.
-      state.flag_logout = false; // When the 'logoutAccountInitial' async action is rejected (encountered an error), set the loading state to false.
     },
     [logoutAccountInitial.fulfilled]: (state, action) => {
       state.loading = false; // When the 'logoutAccountInitial' async action is fulfilled (successfully completed), set the loading state to false.
-      state.flag_logout = true;
-
-      // Clear accessToken
-      removeFromLocalStorage(ACCESS_TOKEN);
-
-      // Clear Permission Key
-      removeFromLocalStorage(PERMISSION_KEY);
     },
     [logoutAccountInitial.rejected]: (state, action) => {
       state.loading = false;
-      state.flag_logout = false; // When the 'logoutAccountInitial' async action is rejected (encountered an error), set the loading state to false.
       state.error = action.payload; // Set the error state to the payload of the rejected action.
     },
 
     //* Verification OTP Account
     [verificationOTPAccountInitial.pending]: (state, action) => {
       state.loading = true; // When the 'verificationOTPAccountInitial' async action starts (is pending), set the loading state to true.
-      state.flag_veri_otp = false; // When the 'verificationOTPAccountInitial' async action is rejected (encountered an error), set the loading state to false.
+      state.flag = false; // When the 'verificationOTPAccountInitial' async action is rejected (encountered an error), set the loading state to false.
     },
     [verificationOTPAccountInitial.fulfilled]: (state, action) => {
       state.loading = false; // When the 'verificationOTPAccountInitial' async action is fulfilled (successfully completed), set the loading state to false.
       state.auth = action.payload;
-      state.flag_veri_otp = true;
+      state.flag = true;
 
       // Save accessToken localsorage
       if (state.auth) {
@@ -159,7 +174,7 @@ const Auth = createSlice({
     },
     [verificationOTPAccountInitial.rejected]: (state, action) => {
       state.loading = false;
-      state.flag_veri_otp = false; // When the 'verificationOTPAccountInitial' async action is rejected (encountered an error), set the loading state to false.
+      state.flag = false; // When the 'verificationOTPAccountInitial' async action is rejected (encountered an error), set the loading state to false.
       state.error = action.payload; // Set the error state to the payload of the rejected action.
     },
 
@@ -175,9 +190,33 @@ const Auth = createSlice({
       state.loading = false;
       state.error = action.payload; // Set the error state to the payload of the rejected action.
     },
+
+    //* Change Password Account
+    [changePasswordAccountInitial.pending]: (state, action) => {
+      state.loading = true; // When the 'changePasswordAccountInitial' async action starts (is pending), set the loading state to true.
+    },
+    [changePasswordAccountInitial.fulfilled]: (state, action) => {
+      state.loading = false; // When the 'changePasswordAccountInitial' async action is fulfilled (successfully completed), set the loading state to false.
+    },
+    [changePasswordAccountInitial.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload; // Set the error state to the payload of the rejected action.
+    },
+
+    //* Update Profile Account
+    [updateProfileAccountInitial.pending]: (state, action) => {
+      state.loading = true; // When the 'updateProfileAccountInitial' async action starts (is pending), set the loading state to true.
+    },
+    [updateProfileAccountInitial.fulfilled]: (state, action) => {
+      state.loading = false; // When the 'updateProfileAccountInitial' async action is fulfilled (successfully completed), set the loading state to false.
+    },
+    [updateProfileAccountInitial.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload; // Set the error state to the payload of the rejected action.
+    },
   },
 });
 
 const AuthSlice = Auth.reducer;
-export const { clearAuth } = Auth.actions;
+export const { clearAuth, clearInfoProfile, clearFlag } = Auth.actions;
 export default AuthSlice;
