@@ -58,7 +58,20 @@ export const HEADER = {
   APP_VERSION_HEADER: '1.0',
   ACCEPT_HEADER: 'application/json',
   BEARER_HEADER: 'Bearer',
+
+  API_KEY: 'X-API-KEY',
+  DEVICE_ID: 'X-DEVICE-ID',
+  IP: 'X-FORWARDED-FOR',
+  AUTHORIZATION: 'authorization',
+  // Cookie
+  HEADER_HEADER_FORWARDED_HOST: 'x-forwarded-host',
+  HEADER_DOMAIN: 'localhost',
+  CONTENT_LENGTH: 'content-length',
+  CONTENT_TYPE: 'Content-Type',
 };
 
 // Todo: API
-export const renewToken = '/api/v1/auth/renew-token';
+export const URL = {
+  _RENEW_TOKEN: '/api/v1/auth/renew-token',
+  _LOGIN: '/api/v1/auth/login',
+};
