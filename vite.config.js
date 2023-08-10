@@ -73,14 +73,14 @@ export default defineConfig({
   },
 
   // Optimize CSS
-  css: {
-    postcss: {
-      plugins: [
-        require('autoprefixer'), // Add vendor prefixes
-        require('cssnano')(), // Minify CSS
-      ],
-    },
-  },
+  // css: {
+  //   postcss: {
+  //     plugins: [
+  //       require('autoprefixer'), // Add vendor prefixes
+  //       require('cssnano')(), // Minify CSS
+  //     ],
+  //   },
+  // },
 
   // Optimize JavaScript
   build: {

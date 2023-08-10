@@ -1,6 +1,6 @@
 <script setup>
 //* LAYOUT
-import LayoutAdmin from '@/layouts/index.vue'
+import LayoutAdmin from '@/layouts/index.vue';
 </script>
 
 <template>
