@@ -73,14 +73,14 @@ export default defineConfig({
   },
 
   // Optimize CSS
-  css: {
-    postcss: {
-      plugins: [
-        require('autoprefixer'), // Add vendor prefixes
-        require('cssnano')(), // Minify CSS
-      ],
-    },
-  },
+  // css: {
+  //   postcss: {
+  //     plugins: [
+  //       require('autoprefixer'), // Add vendor prefixes
+  //       require('cssnano')(), // Minify CSS
+  //     ],
+  //   },
+  // },
 
   // Optimize JavaScript
   build: {
@@ -91,6 +91,9 @@ export default defineConfig({
     },
     // Enable source maps for better debugging
     sourcemap: true,
+    // Other build options
+    minify: 'terser',
+
     // Code Splitting
     rollupOptions: {
       output: {

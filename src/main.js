@@ -13,7 +13,10 @@ import App from './App.vue';
 import router from './routers';
 
 //* CONFIGS
-import { DATA_TYPE, DEFAULT } from './configs';
+import { DEFAULT } from './commons';
+
+//* CONSTANTS
+import { DATA_TYPE } from './commons/constants';
 
 //* PROVIDERS
 import { createRedux } from './providers/storePlugin';

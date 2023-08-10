@@ -3,30 +3,27 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Center toast from the bottom up */
 .Vue-Toastification__container.top-right {
-  top: 85px !important;
-  bottom: 80px !important;
+    top: 85px !important;
+    bottom: 80px !important;
 }
 
 /* Adjust toast styles for mobile devices */
 @media only screen and (max-width: 600px) {
-  .Vue-Toastification__container {
-    width: 100vw;
-    padding: 0;
-    left: 1rem !important;
-    right: 1rem  !important;
+    .Vue-Toastification__container {
+        width: 100vw;
+        padding: 0;
+        left: 1rem !important;
+        right: 1rem !important;
 
-    margin: 0;
+        margin: 0;
+    }
+    .Vue-Toastification__container .Vue-Toastification__toast {
+        padding: 8px 18px !important; /* Adjust the padding for better spacing */
+        align-items: center;
+        min-height: 50px;
+        border-radius: 20px;
+        width: 90% !important;
+    }
 }
-  .Vue-Toastification__container .Vue-Toastification__toast {
-    padding: 8px 18px !important; /* Adjust the padding for better spacing */
-    align-items: center;
-    min-height: 50px;
-    border-radius: 20px;
-    width: 90% !important;
-
-  }
-}
-

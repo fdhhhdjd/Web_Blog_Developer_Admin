@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 //* CONFIGS
-import { PRODUCTS } from '../configs';
+import { PRODUCTS } from '@/commons';
 
 // Todo: Create router
 export default createRouter({
@@ -11,6 +11,7 @@ export default createRouter({
     {
       path: '/',
       component: import('@/pages/auth/index.vue'),
+      alias: '/dashboard',
       meta: {
         layout: 'LayoutAuthenticated',
         title: PRODUCTS.LIST,
