@@ -27,7 +27,6 @@ export const getFromLocalStorage = (key, defaultValue = null) => {
     return JSON.parse(serializedData);
   } catch (error) {
     // If an error occurs during the retrieval process, log the error to the console
-    console.error('Error getting data from LocalStorage:', error);
 
     // Return the default value in case of an error
     return defaultValue;

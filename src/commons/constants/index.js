@@ -41,7 +41,7 @@ export const CHARACTER = {
   _25: 25,
 };
 
-// TYPE TOAST
+// Todo: TYPE TOAST
 export const TOAST = {
   BOTTOM_CENTER: 'bottom-center',
   TOP_RIGHT: 'top-right',
@@ -49,4 +49,29 @@ export const TOAST = {
     DARK: 'dark',
     LIGHT: 'light',
   },
+};
+
+// Todo: Header
+export const HEADER = {
+  OS_TYPE_HEADER: 'web',
+  OS_VERSION_HEADER: '1.0',
+  APP_VERSION_HEADER: '1.0',
+  ACCEPT_HEADER: 'application/json',
+  BEARER_HEADER: 'Bearer',
+
+  API_KEY: 'X-API-KEY',
+  DEVICE_ID: 'X-DEVICE-ID',
+  IP: 'X-FORWARDED-FOR',
+  AUTHORIZATION: 'authorization',
+  // Cookie
+  HEADER_HEADER_FORWARDED_HOST: 'x-forwarded-host',
+  HEADER_DOMAIN: 'localhost',
+  CONTENT_LENGTH: 'content-length',
+  CONTENT_TYPE: 'Content-Type',
+};
+
+// Todo: API
+export const URL = {
+  _RENEW_TOKEN: '/api/v1/auth/renew-token',
+  _LOGIN: '/api/v1/auth/login',
 };

@@ -18,6 +18,15 @@ export default createRouter({
       },
     },
     {
+      path: '/',
+      component: import('@/pages/profile/index.vue'),
+      alias: '/profile',
+      meta: {
+        layout: 'LayoutAuthenticated',
+        title: 'Profile',
+      },
+    },
+    {
       path: '/thankyou',
       component: import('@/pages/thankyou/index.vue'),
     },

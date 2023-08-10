@@ -30,6 +30,7 @@
     "add": "^2.0.6",
     "axios": "^1.4.0",
     "canvas-confetti": "^1.6.0",
+    "nanoid": "^4.0.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "vue": "^3.3.4",

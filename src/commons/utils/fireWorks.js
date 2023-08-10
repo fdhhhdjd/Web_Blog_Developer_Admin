@@ -2,7 +2,7 @@
 import confetti from 'canvas-confetti';
 
 //* UTILS
-import { randomInRange } from '.';
+import { randomInRange } from './function';
 
 //* CONFIGS
 import { TIME } from '@/commons/constants';
