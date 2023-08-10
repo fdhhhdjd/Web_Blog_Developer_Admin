@@ -21,6 +21,8 @@ export { default as runFireworks } from './utils/fireWorks';
 export * from './utils/localstorage';
 export * from './utils/toast';
 export * from './utils/function';
+export * from './utils/reasonPhrases';
+export * from './utils/statusCodes';
 
 //* KEYS
 export * from './keys/localsorage';

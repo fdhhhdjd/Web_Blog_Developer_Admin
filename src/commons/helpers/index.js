@@ -10,7 +10,8 @@ import { getFromLocalStorage } from '../utils/localstorage';
 import { getDeviceId } from '../utils/function';
 
 //* KEYS
-import { ACCESS_TOKEN } from '../keys/localsorage';
+import { ACCESS_TOKEN, PERMISSION_KEY } from '../keys/localsorage';
+import { HEADER } from '../constants';
 
 // A custom hook that provides access to the Redux store's 'dispatch' function.
 // It allows components to dispatch actions to update the Redux store.
@@ -31,15 +32,20 @@ export const useSelector = (fn) => {
 
 // Take header for header browser
 export const headerBrowser = () => {
-  // add the authorization to the headers
   const headers = {
-    'X-DEVICE-ID': getDeviceId(),
+    [HEADER.CONTENT_TYPE]: HEADER.ACCEPT_HEADER,
+    [HEADER.DEVICE_ID]: getDeviceId(),
   };
 
   const token = getFromLocalStorage(ACCESS_TOKEN);
+  const permissionKey = getFromLocalStorage(PERMISSION_KEY);
 
   if (token) {
-    headers.authorization = token ? `Bearer ${token}` : null;
+    headers[HEADER.AUTHORIZATION] = `Bearer ${token}`;
+  }
+
+  if (permissionKey) {
+    headers[HEADER.API_KEY] = permissionKey;
   }
 
   return headers;

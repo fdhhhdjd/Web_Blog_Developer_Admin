@@ -2,7 +2,7 @@
 import { nanoid } from 'nanoid';
 
 //* KEYS
-import { ACCESS_TOKEN } from '../keys/localsorage';
+import { DEVICE_ID } from '../keys/localsorage';
 
 //* CONFIGS
 import configs from '../configs/configs';
@@ -19,11 +19,11 @@ export const randomInRange = (min, max) => {
 
 // Random device id and save localsorage
 export function getDeviceId() {
-  let result = localStorage.getItem(ACCESS_TOKEN);
+  let result = localStorage.getItem(DEVICE_ID);
   if (result) {
     return result;
   } else {
     result = nanoid(random_nano_id);
-    localStorage.setItem(ACCESS_TOKEN, result);
+    localStorage.setItem(DEVICE_ID, result);
   }
 }
