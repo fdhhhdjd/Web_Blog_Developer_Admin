@@ -81,7 +81,6 @@ onBeforeUnmount(() => {
     :target="item.target ?? null"
     @click="menuClick"
   >
-    {{ console.log($route.name) }}
     <BaseIcon v-if="item.icon" :path="item.icon" class="transition-colors" />
     <span class="px-2 transition-colors">{{ itemLabel }}</span>
     <BaseIcon

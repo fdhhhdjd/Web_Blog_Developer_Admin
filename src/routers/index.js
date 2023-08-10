@@ -21,6 +21,14 @@ export default createRouter({
       path: '/thankyou',
       component: import('@/pages/thankyou/index.vue'),
     },
+    {
+      path: '/login',
+      component: import('@/pages/auth/login.vue'),
+      meta: {
+        layout: 'LayoutGuest',
+        title: 'Login',
+      },
+    },
     // will match everything and put it under `$route.params.pathMatch`
     {
       path: '/:pathMatch(.*)*',
