@@ -25,7 +25,4 @@ import '@/routers/title';
 const app = createApp(App);
 
 //* START ALL
-app.use(router);
-app.use(createRedux(store));
-app.use(Toast, options);
-app.mount('#app');
+app.use(router).use(createRedux(store)).use(Toast, options).mount('#app');

@@ -26,7 +26,7 @@ export const loginAccountInitial = createAsyncThunk(
       return responseData.data;
     } catch (error) {
       if (error) {
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -47,7 +47,7 @@ export const registerAccountInitial = createAsyncThunk(
       return responseData.data;
     } catch (error) {
       if (error) {
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -67,7 +67,7 @@ export const renewTokenAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -87,7 +87,7 @@ export const forgetPasswordAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -108,7 +108,7 @@ export const logoutAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -128,7 +128,7 @@ export const verificationOTPAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -146,7 +146,7 @@ export const getProfileAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -170,7 +170,7 @@ export const changePasswordAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }
@@ -195,7 +195,7 @@ export const updateProfileAccountInitial = createAsyncThunk(
       if (error) {
         console.log(error);
 
-        return rejectWithValue(error);
+        return rejectWithValue(error.response.data);
       }
     }
   }

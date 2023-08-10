@@ -26,3 +26,6 @@ export * from './utils/statusCodes';
 
 //* KEYS
 export * from './keys/localsorage';
+
+//* REGEX
+export * from './regex/index';
