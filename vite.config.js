@@ -131,10 +131,10 @@ export default defineConfig({
   },
 
   // Add custom global variables accessible in your code
-  define: {
-    __VUE_OPTIONS_API__: false, // Disable Vue 3 Options API if using Composition API only
-    __VUE_PROD_DEVTOOLS__: false, // Disable Vue Devtools in production build
-    // Add your own global variables here
-    MY_GLOBAL_VARIABLE: JSON.stringify('my-value'),
-  },
+  // define: {
+  //   __VUE_OPTIONS_API__: false, // Disable Vue 3 Options API if using Composition API only
+  //   __VUE_PROD_DEVTOOLS__: false, // Disable Vue Devtools in production build
+  //   // Add your own global variables here
+  //   MY_GLOBAL_VARIABLE: JSON.stringify('my-value'),
+  // },
 });

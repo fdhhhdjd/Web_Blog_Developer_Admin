@@ -75,3 +75,9 @@ export const URL = {
   _RENEW_TOKEN: '/auth/renew-token',
   _LOGIN: '/auth/login',
 };
+
+// Todo: Type Login
+export const TYPE_LOGIN = {
+  EMAIL: 0, // Email
+  USERNAME: 1, // username
+};

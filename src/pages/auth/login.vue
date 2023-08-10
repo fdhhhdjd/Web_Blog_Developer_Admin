@@ -11,16 +11,29 @@ import FormField from '@/components/Form/FormField.vue';
 import FormControl from '@/components/Form/FormControl.vue';
 import BaseButton from '@/components/Button/BaseButton.vue';
 
+//* COMMON
+import { useDispatch, validateInputLoginEmailOrUsername } from '@/commons';
+import { loginAccountInitial } from '@/providers/redux';
+
 const form = reactive({
-  login: 'john.doe',
-  pass: 'highly-secure-password-fYjUw-',
+  email_or_username: '',
+  password: '',
   remember: true,
 });
+
+const dispatch = useDispatch();
 
 const router = useRouter();
 
 const submit = () => {
-  router.push('/dashboard');
+  const type_login = validateInputLoginEmailOrUsername(form.email_or_username);
+
+  dispatch(
+    loginAccountInitial({
+      email_or_username: form.email_or_username,
+      password: form.password,
+    })
+  );
 };
 </script>
 
@@ -28,11 +41,16 @@ const submit = () => {
   <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
     <CardBox :class="cardClass" is-form @submit.prevent="submit">
       <FormField label="Login" help="Please enter your login">
-        <FormControl v-model="form.login" :icon="mdiAccount" name="login" autocomplete="username" />
+        <FormControl
+          v-model="form.email_or_username"
+          :icon="mdiAccount"
+          name="login"
+          autocomplete="username"
+        />
       </FormField>
       <FormField label="Password" help="Please enter your password">
         <FormControl
-          v-model="form.pass"
+          v-model="form.password"
           :icon="mdiAsterisk"
           type="password"
           name="password"

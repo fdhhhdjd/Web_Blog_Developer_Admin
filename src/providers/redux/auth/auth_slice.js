@@ -21,6 +21,7 @@ import {
   REDUX_NAME,
   removeFromLocalStorage,
   saveToLocalStorage,
+  showErrorToast,
 } from '@/commons';
 import router from '@/routers';
 
@@ -30,10 +31,6 @@ const initialState = {
   auth: null,
   info_profile: null,
   flag: false,
-  flag_logout: false,
-  flag_veri_otp: false,
-  flag_register: false,
-  flag_change_pw: false,
 };
 
 const Auth = createSlice({
@@ -81,6 +78,8 @@ const Auth = createSlice({
 
       // Save accessToken localsorage
       if (state.auth) {
+        router.push('/dashboard');
+
         // Save AccessToken
         saveToLocalStorage(ACCESS_TOKEN, state.auth.metadata.access_token);
 
@@ -91,6 +90,8 @@ const Auth = createSlice({
     [loginAccountInitial.rejected]: (state, action) => {
       state.loading = false; // When the 'loginAccountInitialState' async action is rejected (encountered an error), set the loading state to false.
       state.error = action.payload; // Set the error state to the payload of the rejected action.
+      // Show Toast error
+      showErrorToast(action.payload.message);
     },
 
     //* Register Account
